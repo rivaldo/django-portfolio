@@ -1,10 +1,10 @@
 from django import forms
 
 class LoginForms(forms.Form):
-    nome_login = forms.CharField(
+    nome_usuario = forms.CharField(
         label='Nome de Login',
         required=True,
-        max_length=100,
+        max_length=255,
         widget=forms.TextInput(
             attrs={
                 "type":"text",
@@ -19,7 +19,7 @@ class LoginForms(forms.Form):
     senha = forms.CharField(
         label='Senha',
         required=True,
-        max_length=70,
+        max_length=50,
         widget=forms.PasswordInput(
             attrs={
                 "class":"form-control",
@@ -28,7 +28,8 @@ class LoginForms(forms.Form):
             }
         )
     )
-
+    
+###########################################################################################
 class CadastroForms(forms.Form):
     
     nome_usuario = forms.CharField(
@@ -64,7 +65,7 @@ class CadastroForms(forms.Form):
         widget=forms.PasswordInput(
             attrs={
                 "class":"form-control",
-                "name":"password",
+                "name":"senha",
                 "placeholder":"Digite sua senha"
             }
         )
@@ -76,7 +77,7 @@ class CadastroForms(forms.Form):
         widget=forms.PasswordInput(
             attrs={
                 "class":"form-control",
-                "name":"confirma_password",
+                "name":"confirma_senha",
                 "placeholder":"Confirme a sua senha"
             }
         )
